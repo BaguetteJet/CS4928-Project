@@ -1,12 +1,7 @@
-datasets
-gensim
-matplotlib
-nltk
-numpy
-pandas
-seaborn
-scikit-learn
-tensorflow
 torch
-tqdm
+numpy
+scikit-learn
 transformers
+jupyter
+ipykernel
+ipywidgets
