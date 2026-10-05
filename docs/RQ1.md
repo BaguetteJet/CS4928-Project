@@ -14,3 +14,19 @@ Our evaluation metrics will be Precision, Recall, and mainly F1 Score.
 | Factory Method | 0.87 | 0.77 | 0.78 |
 | Prototype | 0.88 | 0.84 | 0.84 |
 | Singleton | 0.92 | 0.9 | 0.91 |
+
+### For Excel:
+Precision:  
+Factory Method: 0.87  
+Prototype: 0.88  
+Singleton: 0.92
+
+Recall:  
+Factory Method: 0.77  
+Prototype: 0.84  
+Singleton: 0.9
+
+F1 Score:  
+Factory Method: 0.78  
+Prototype: 0.84  
+Singleton: 0.91
