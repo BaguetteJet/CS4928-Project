@@ -3,3 +3,5 @@
 > GitHub: [Design-Pattern-Recognition-using-Large-Language-Models-](https://github.com/sushantkumar007007/Design-Pattern-Recognition-using-Large-Language-Models-)
 
 # Design Pattern Recognition with Large Language Models
+
+To get started, see [`docs/Guide.md`](Guide.md)
