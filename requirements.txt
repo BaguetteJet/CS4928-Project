@@ -1,0 +1,12 @@
+datasets
+gensim
+matplotlib
+nltk
+numpy
+pandas
+seaborn
+scikit-learn
+tensorflow
+torch
+tqdm
+transformers
