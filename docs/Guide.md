@@ -11,7 +11,7 @@
 git clone https://github.com/BaguetteJet/CS4928-Project
 ```
 
-1.2 Clone submodule
+1.2 Clone submodule `baseline`
 ```bash
 git submodule update --init --recursive
 ```
@@ -19,12 +19,10 @@ git submodule update --init --recursive
 1.3 Extract `baseline/datasets.zip` into root directory `datasets/`
 ```bash
 # Linux/MacOS
-mkdir -p datasets
-unzip -o baseline/datasets.zip -d datasets/
+unzip -o baseline/datasets.zip
 
 # Windows (PowerShell)
-New-Item -ItemType Directory -Force datasets
-Expand-Archive -Path baseline\datasets.zip -DestinationPath datasets -Force
+Expand-Archive -Path baseline\datasets.zip -DestinationPath . -Force
 ```
 
 ## Setup Python
