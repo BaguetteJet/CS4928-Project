@@ -45,6 +45,15 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+2.3 Install Git hooks
+```bash
+pip install pre-commit
+pre-commit install --config .config/pre-commit.yaml
+```
+
+```bash
+pre-commit run --all-files --config .config/pre-commit.yaml
+```
 ## Run Baseline
 
 Run the baseline notebook to answer [Research Question 1](/docs/Research_Questions.md#rq1)
