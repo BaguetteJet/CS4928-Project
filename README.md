@@ -4,4 +4,4 @@
 
 # Design Pattern Recognition with Large Language Models
 
-To get started, see [`docs/Guide.md`](Guide.md)
+To get started, see [`docs/Guide.md`](docs/Guide.md)
