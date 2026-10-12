@@ -30,3 +30,29 @@ F1 Score:
 Factory Method: 0.78  
 Prototype: 0.84  
 Singleton: 0.91
+
+**NOTE**: Factory Method only had 11 truth samples in the dataset, so we use an 11-11 split instead of 15-15 for this design pattern.
+
+## Reproduction Results
+| Design Pattern | Precision | Recall | F1 Score |
+| :- | :- | :- | :- |
+| Factory Method | 0.64 | 0.80 | 0.71 |
+| Prototype | 1.0 | 1.0 | 1.0 |
+| Singleton | 1.0 | 1.0 | 1.0 |
+
+### For Excel:
+Results of 1.0 are due to small dataset size.
+Precision:  
+Factory Method: 0.64  
+Prototype: 1.0  
+Singleton: 1.0
+
+Recall:  
+Factory Method: 0.80  
+Prototype: 1.0  
+Singleton: 1.0
+
+F1 Score:  
+Factory Method: 0.71  
+Prototype: 1.0  
+Singleton: 1.0  
