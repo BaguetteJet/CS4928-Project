@@ -41,7 +41,8 @@ Singleton: 0.91
 | Singleton | 1.0 | 1.0 | 1.0 |
 
 ### For Excel:
-Results of 1.0 are due to small dataset size.
+Important Note: Results of 1.0 are due to errors in the original paper implementation; a set of predicted labels generated before training using KNN were used as the truth labels in the train, validation, and test datasets instead of the actual truth labels, meaning the model was evaluated against its own former predictions rather than the ground truth. Another contributing factor may have been the small dataset size. Factory Method only had 11 truth samples in the dataset, so we use an 11-11 split instead of 15-15 for this design pattern. We noticed class imbalance in the original implementation, so we stratified the classes in our reproduction, therefore our results may differ.
+
 Precision:  
 Factory Method: 0.64  
 Prototype: 1.0  
