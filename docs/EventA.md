@@ -10,8 +10,12 @@ From the linked artefact, select 15 Java examples that your group did not use at
 
 ## Event A vs M2
 **What holds:**\
+Everything transferred without errors, with the main change being the dataset used for testing.  
 **What doesn't hold:**\
-**Evidence for the interpretation:**
+The Event A embeddings had to be transformed using the same scaler fitted on the RQ1 dataset in M2. This ensured that both datasets used the same normalisation, making their embeddings directly comparable.   
+**Evidence for the interpretation:**\
+Lack of errors in the implementation.  
+The results obtained from Event A were worse than those from RQ1. One explanation is that Event A was transformed using the scaler fitted on RQ1, meaning its embeddings were not guaranteed to fall within the same distribution or range as the RQ1 embeddings. This could result in Event A samples lying further away from the RQ1 embeddings in the feature space, making it more difficult for KNN to identify suitable neighbours and accurately classify the samples.
 
 ## For Excel
 
@@ -40,46 +44,23 @@ Prototype: ~0.8-1.0
 Singleton: ~0.8-1.0
 
 ### Result / Decision
+Event A Results:
+Precision:
+Factory Method: 1.0
+Prototype: 0.553
+Singleton: 0.553
 
-### Concrete Design Problem
+Recall:
+Factory Method: 0.67
+Prototype: 0.53
+Singleton: 0.53
 
-The recognition method is currently implemented separately for each design pattern being tested, resulting in significant code duplication.
+F1 Score:
+Factory Method: 0.80
+Prototype: 0.521
+Singleton: 0.521
 
-Duplicated code introduces several maintainability issues:
+The results obtained from Event A were worse than those from RQ1. One explanation is that Event A was transformed using the scaler fitted on RQ1, meaning its embeddings were not guaranteed to fall within the same distribution or range as the RQ1 embeddings. This could result in Event A samples lying further away from the RQ1 embeddings in the feature space, making it more difficult for KNN to identify suitable neighbours and accurately classify the samples.
 
-- **Increased maintenance effort:** Changes, improvements, or fixes must be manually applied to all duplicated code.
-- **Risk of inconsistencies:** If changes are not applied consistently across all implementations, different design patterns may end up using slightly different versions of the recognition method, which could affect test results.
-- **Greater likelihood of errors:** Repeatedly modifying the same logic in multiple locations increases the possibility of introducing errors or overlooking an implementation.
-- **Reduced scalability:** As more design patterns are added to the evaluation, additional copies of the recognition method may be required, further increasing code complexity and maintenance overhead.
-- **Poor code reusability:** The duplicated implementation makes it difficult to reuse or extend the recognition functionality independently of the individual design patterns.
-
-### Alternatives considered
-
-Refactoring Techniques:
-
-1. Extract Method
-    - Extract duplicated recognition logic into a one shared method.
-    - Reduces code duplication and maintenance effort.
-    - Less suitable for managing multiple related functions independently.
-
-2. Extract Class
-    - Move the recognition logic, into a dedicated class.
-    - Separates recognition functionality from individual design pattern implementations.
-    - Makes individual functions easier to modify, maintain and extend. 
-    - Introduces some additional class structure.
-
-### Chosen intervention / no-change decision
-
-**Extract Class** was selected because the recognition process consists of multiple related functions and loops.
-
-- Centralises recognition functionality in one location.
-- Eliminates duplicated code across design patterns.
-- Allows individual functions to be modified independently.
-- Improves maintainability, reusability and extensibility.
-- Ensures consistent recognition behaviour across implementations.
-
-
-
-
-
-
+### Identified Refactoring Technique
+The recognition method is currently implemented separately for each design pattern being tested, resulting in significant code duplication. Implementing the Extract Class refactoring technique to separate the recognition method and make it reusable will solve the duplication issue and make it easier to refactor and update in future.
